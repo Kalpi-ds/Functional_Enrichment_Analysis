@@ -16,7 +16,9 @@ Here’s a comparison:
 
 **2. Implementation Differences**
    
-Feature	GSEA	clusterProfiler
+| Feature	      | GSEA	                                                                  | clusterProfiler                                                      |
+|-----------------|--------------------------------------------------------------------------|----------------------------------------------------------------------|
+
 Software	Standalone Java-based tool, also available in R (fgsea and GSEABase packages)	R package with flexible functions for various enrichment analyses
 Ease of Use	Requires specific input formats and is relatively rigid	More flexible, integrates well with Bioconductor packages like DESeq2 and edgeR
 Visualization	Built-in enrichment plots	Provides customizable visualization options (dot plots, bar plots, network plots)
