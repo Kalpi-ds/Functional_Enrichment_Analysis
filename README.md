@@ -1,15 +1,16 @@
 # GSEA and ORA
 
-Both GSEA (Gene Set Enrichment Analysis) and clusterProfiler are widely used tools for functional enrichment analysis in bioinformatics, but they differ in methodology, implementation, and flexibility. Here’s a comparison:
+Both GSEA (Gene Set Enrichment Analysis) and  (ORA) Over-Representation Analysis are widely used tools for functional enrichment analysis in bioinformatics, but they differ in methodology, implementation, and flexibility. 
+Here’s a comparison:
 
 **1. Conceptual Differences**
    
-Feature	GSEA (Gene Set Enrichment Analysis)	clusterProfiler
-Approach	Uses a rank-based, non-thresholded method to identify gene set enrichment based on a pre-ranked gene list (e.g., ranked by log fold-change)	Performs over-representation analysis (ORA) and GSEA-like methods to analyze gene enrichment
-Input Data	Requires a ranked list of all genes (e.g., by fold change or correlation)	Accepts a gene list (with or without ranking)
-Thresholding	No predefined cutoff for significance; works with the entire ranked list	ORA requires a threshold (e.g., adjusted p-value < 0.05) to select differentially expressed genes
-Statistical Method	Uses Kolmogorov-Smirnov–like statistics to evaluate if a gene set is randomly distributed or enriched at the top or bottom of the ranked list	Uses Fisher’s exact test (ORA) and other methods (GSEA, set enrichment)
-Gene Sets	Typically uses MSigDB (Molecular Signatures Database)	Supports various gene sets from databases like GO, KEGG, Reactome, and MSigDB
+| Feature |	GSEA | clusterProfiler |
+| Approach | Uses a rank-based, non-thresholded method to identify gene set enrichment based on a pre-ranked gene list (e.g., ranked by log fold-change)	| Performs over-representation analysis (ORA) and GSEA-like methods to analyze gene enrichment |
+| Input Data |	Requires a ranked list of all genes (e.g., by fold change or correlation) | Accepts a gene list (with or without ranking)
+| Thresholding	| No predefined cutoff for significance; works with the entire ranked list | ORA requires a threshold (e.g., adjusted p-value < 0.05) to select differentially expressed genes
+| Statistical Method	|Uses Kolmogorov-Smirnov–like statistics to evaluate if a gene set is randomly distributed or enriched at the top or bottom of the ranked list | Uses Fisher’s exact test (ORA) and other methods (GSEA, set enrichment)
+| Gene Sets	| Typically uses MSigDB (Molecular Signatures Database) | Supports various gene sets from databases like GO, KEGG, Reactome, and MSigDB
 
 **2. Implementation Differences**
    
