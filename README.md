@@ -1,3 +1,4 @@
+#GSEA and ORA
 Both GSEA (Gene Set Enrichment Analysis) and clusterProfiler are widely used tools for functional enrichment analysis in bioinformatics, but they differ in methodology, implementation, and flexibility. Here’s a comparison:
 
 1. Conceptual Differences
