@@ -18,18 +18,25 @@ Here’s a comparison:
    
 | Feature	      | GSEA	                                                                  | clusterProfiler                                                      |
 |-----------------|--------------------------------------------------------------------------|----------------------------------------------------------------------|
-| Software	      | Standalone Java-based tool, also available in R (fgsea and GSEABase packages)| R package with flexible functions for various enrichment analyses |
-| Ease of Use	   | Requires specific input formats and is relatively rigid	| More flexible, integrates well with Bioconductor packages like DESeq2 and edgeR |
-| Visualization   | Built-in enrichment plots	| Provides customizable visualization options (dot plots, bar plots, network plots) |
-| Customization	| Limited	| Highly customizable with different statistical models and visualization methods |
+| **Software**	      | Standalone Java-based tool, also available in R (fgsea and GSEABase packages)| R package with flexible functions for various enrichment analyses |
+| **Ease of Use**	   | Requires specific input formats and is relatively rigid	| More flexible, integrates well with Bioconductor packages like DESeq2 and edgeR |
+| **Visualization**   | Built-in enrichment plots	| Provides customizable visualization options (dot plots, bar plots, network plots) |
+| **Customization**	| Limited	| Highly customizable with different statistical models and visualization methods |
 
 **3. Which One Should You Use?**
    
 Use **GSEA** if:
 
-You have a ranked list of genes and want to find enriched gene sets without an arbitrary cutoff.
-You want to analyze gene expression changes in a continuous manner.
+You have a ranked list of genes and want to find enriched gene sets **without an arbitrary cutoff**. Rank-based methods **analyze all genes in the dataset**, avoiding information loss due to arbitrary cutoff selection.
+You want to analyze gene expression changes in a **continuous manner**. Some experimental conditions result in gradual changes across a pathway rather than a sharp up/down regulation in a subset of genes.
+In many cases, biological processes involve **coordinated but modest changes** across multiple genes rather than a few highly significant ones. GSEA-type methods can detect such trends even when individual genes are not strongly differentially expressed.
+GSEA-type methods can detect such trends even when individual genes are not strongly differentially expressed.
+ORA is sensitive to small variations in gene selection, especially when the cutoff is strict.
+Rank-based approaches smooth out noise by considering the relative position of genes in the ranking rather than absolute fold-changes or p-values.
 You need classical GSEA statistics (e.g., enrichment score, leading-edge genes).
+Enrichment Score (ES): Measures how much a gene set is enriched at the top or bottom of the ranked list.
+Normalized Enrichment Score (NES): Adjusted for differences in gene set size, making results comparable across datasets.
+Leading-edge genes: Identifies the most contributing genes within a gene set.
 
 Use **clusterProfiler** if:
 
