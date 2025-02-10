@@ -27,21 +27,23 @@ Here’s a comparison:
    
 Use **GSEA** if:
 
-You have a ranked list of genes and want to find enriched gene sets **without an arbitrary cutoff**. Rank-based methods **analyze all genes in the dataset**, avoiding information loss due to arbitrary cutoff selection.
-You want to analyze gene expression changes in a **continuous manner**. Some experimental conditions result in gradual changes across a pathway rather than a sharp up/down regulation in a subset of genes.
-In many cases, biological processes involve **coordinated but modest changes** across multiple genes rather than a few highly significant ones. GSEA-type methods can detect such trends even when individual genes are not strongly differentially expressed.
-GSEA-type methods can detect such trends even when individual genes are not strongly differentially expressed.
-ORA is sensitive to small variations in gene selection, especially when the cutoff is strict.
-Rank-based approaches smooth out noise by considering the relative position of genes in the ranking rather than absolute fold-changes or p-values.
-You need classical GSEA statistics (e.g., enrichment score, leading-edge genes).
-Enrichment Score (ES): Measures how much a gene set is enriched at the top or bottom of the ranked list.
-Normalized Enrichment Score (NES): Adjusted for differences in gene set size, making results comparable across datasets.
-Leading-edge genes: Identifies the most contributing genes within a gene set.
+1. You have a ranked list of genes and want to find enriched gene sets **without an arbitrary cutoff**. Rank-based methods **analyze all genes in the dataset**, avoiding information loss due to arbitrary cutoff selection.
+2. You want to analyze gene expression changes in a **continuous manner**. Some experimental conditions result in gradual changes across a pathway rather than a sharp up/down regulation in a subset of genes.
+3. In many cases, biological processes involve **coordinated but modest changes** across multiple genes rather than a few highly significant ones. GSEA-type methods can detect such trends even when individual genes are not strongly differentially expressed. GSEA-type methods can detect such trends even when individual genes are not strongly differentially expressed.
+4. ORA is sensitive to small variations in gene selection, especially when the cutoff is strict. Rank-based approaches **smooth out noise** by considering the relative position of genes in the ranking rather than absolute fold-changes or p-values.
+5. You need classical GSEA statistics (e.g., enrichment score, leading-edge genes).
+      **Enrichment Score (ES)**: Measures how much a gene set is enriched at the top or bottom of the ranked list.
+      **Normalized Enrichment Score (NES)**: Adjusted for differences in gene set size, making results comparable across datasets.
+      **Leading-edge genes**: Identifies the most contributing genes within a gene set.
 
 Use **clusterProfiler** if:
 
-You have a list of differentially expressed genes (with or without rankings).
-You need to perform GO/KEGG/Reactome enrichment analysis.
-You want an easy-to-use, highly flexible R-based pipeline for functional annotation.
+1. You want an **easy-to-use**, highly flexible R-based pipeline for functional annotation. Many tools and pipelines (e.g., clusterProfiler, DAVID, Enrichr) support ORA, making it user-friendly.
+2. You have a list of differentially expressed genes (with or without rankings).  
+3. ORA explicitly identifies pathways or functions that are over-represented by **genes with significant changes in expression** (e.g., fold change or adjusted p-value thresholds). It allows you to focus on the most biologically significant genes rather than weaker or more subtly affected genes that might be missed by other methods.
+4. ORA is beneficial when you have **predefined hypotheses** about which pathways or gene sets are important. By testing specific sets (e.g., a particular gene family or pathway), ORA allows you to validate hypotheses or confirm findings based on previous knowledge.
+5. ORA is particularly effective for **case-control studies** or conditions where you have a clear differential gene expression between groups (e.g., treated vs. control). It identifies if a particular biological pathway or gene set is disproportionately affected by the condition you are studying.
+6. Works well with both differentially expressed gene lists and **any gene list of interest** (e.g., genes based on experimental condition, drug response, or mutation status).
+7. You need to perform **GO/KEGG/Reactome/MSigDB** collections enrichment analysis.
 
-Since you're already using clusterProfiler for compareCluster analysis with MSigDB (C9, C6 collections), you might find it more convenient than GSEA. However, if you're interested in rank-based enrichment analysis, you might consider fgsea, which is a fast R-based alternative to GSEA.
+
