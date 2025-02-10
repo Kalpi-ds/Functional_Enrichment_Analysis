@@ -47,3 +47,8 @@ Use **clusterProfiler** if:
 7. You need to perform **GO/KEGG/Reactome/MSigDB** collections enrichment analysis.
 
 
+**Summary: ORA vs Rank-based Methods**
+ORA is best for cases where you want to detect the most significantly altered pathways from a list of DEGs, with clear thresholds. It's a quick, interpretable, and hypothesis-driven approach.
+
+Rank-based methods (e.g., GSEA) are more suitable when you want to capture subtle gene expression trends that may not pass significance thresholds in a traditional DEG analysis but are important when seen in aggregate.
+
