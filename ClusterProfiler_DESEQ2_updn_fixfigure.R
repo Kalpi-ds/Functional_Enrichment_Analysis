@@ -10,7 +10,7 @@ library(ggplot2)
 library(msigdbr)
 
 
-setwd("E:/KY-INBRE PostDoc/Yvonne/Matt/ClusterProfiler_1updnfix")
+setwd("/pathTo/ClusterProfiler_1updnfix")
 
 
 
