@@ -1,4 +1,4 @@
-setwd("E:/KY-INBRE PostDoc/Yvonne/Matt/RNAseq_Run1/GSEA/DESEQ2")
+setwd("/pathTo/GSEA/DESEQ2")
 
 #list of folders for the comparisons
 folder_list <- c("CS2_8WK__VS__CS1_8WK", "CS2_17WK__VS__CS1_17WK", "CS2_28WK__VS__CS1_28WK", "CS3_8WK__VS__CS1_8WK", "CS3_17WK__VS__CS1_17WK", "CS3_28WK__VS__CS1_28WK", "CS4_17WK__VS__CS1_17WK", "CS4_28WK__VS__CS1_28WK", "CS7_8WK__VS__CS1_8WK", "CS7_17WK__VS__CS1_17WK", "CS7_28WK__VS__CS1_28WK",
