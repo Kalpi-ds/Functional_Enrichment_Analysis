@@ -10,7 +10,7 @@ library(ggplot2)
 library(msigdbr)
 
 
-setwd("E:/KY-INBRE PostDoc/Yvonne/Matt/ClusterProfiler")
+setwd("/pathTo/ClusterProfiler")
 
 
 # shared<-read.table("CS2_17WK__VS__CS1_17WK_DEG_P0.05_Q0.05_FC0_FPKM1_FPKMAVG1_FPKMSAM3_MINCOUNT10_ENTREZ.txt",sep="\t", header = FALSE)
