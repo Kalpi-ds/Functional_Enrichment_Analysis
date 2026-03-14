@@ -46,7 +46,7 @@ for (folder in folder_list){
 }
 
 #convert the ensembl ids into gene symbol
-biomart <- read.table("E:/KY-INBRE PostDoc/Yvonne/Matt/RNAseq_Run1/GSEA/hg38.p12_ENSEMBL93_GeneToSymbolAndDescription.txt", header = TRUE, sep = "\t", fill = TRUE, quote = "")
+biomart <- read.table("/pathTo/GSEA/hg38.p12_ENSEMBL93_GeneToSymbolAndDescription.txt", header = TRUE, sep = "\t", fill = TRUE, quote = "")
 
 
 for (folder in folder_list){
